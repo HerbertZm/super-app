@@ -1,0 +1,16 @@
+<ion-content>
+  <ion-card
+    *ngFor="let service of servicesList"
+    (click)="goToDetails(service.id)"
+  >
+    <ion-item>
+      <img
+        src="{{service.image}}"
+        class="image-container">
+      <div class="service-card-content">
+        <ion-label class="service-card-content--item">{{service.paymentDate}}</ion-label>
+        <ion-label class="service-card-content--item">${{service.cost}}</ion-label>
+      </div>
+    </ion-item>
+  </ion-card>
+</ion-content>
