@@ -25,7 +25,10 @@ export class ServiceMiniCardComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.showItems =
+      this.showItems === 0 ? this.servicesList.length : this.showItems;
+  }
 
   goToDetails(id: number): void {
     console.log(id);
