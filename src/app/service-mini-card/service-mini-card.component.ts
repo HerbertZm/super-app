@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-service-mini-card',
@@ -6,7 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service-mini-card.component.scss'],
 })
 export class ServiceMiniCardComponent implements OnInit {
+  @Input() showItems = 2;
+
   servicesList = [
+    { image: 'assets/app-icons/netflix2.png', name: 'Netflix', id: 1 },
+    { image: 'assets/app-icons/netflix2.png', name: 'Netflix', id: 2 },
+    { image: 'assets/app-icons/netflix2.png', name: 'Netflix', id: 3 },
+    { image: 'assets/app-icons/netflix2.png', name: 'Netflix', id: 1 },
+    { image: 'assets/app-icons/netflix2.png', name: 'Netflix', id: 2 },
+    { image: 'assets/app-icons/netflix2.png', name: 'Netflix', id: 3 },
+    { image: 'assets/app-icons/netflix2.png', name: 'Netflix', id: 1 },
+    { image: 'assets/app-icons/netflix2.png', name: 'Netflix', id: 2 },
+    { image: 'assets/app-icons/netflix2.png', name: 'Netflix', id: 3 },
     { image: 'assets/app-icons/netflix2.png', name: 'Netflix', id: 1 },
     { image: 'assets/app-icons/netflix2.png', name: 'Netflix', id: 2 },
     { image: 'assets/app-icons/netflix2.png', name: 'Netflix', id: 3 },

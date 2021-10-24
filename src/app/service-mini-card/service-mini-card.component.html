@@ -1,8 +1,9 @@
-<ion-content class="service-mini-card" fullscreen>
-  <ion-card
-    *ngFor="let service of servicesList"
-    (click)="goToDetails(service.id)"
-  >
+<ion-card
+  *ngFor="let service of servicesList.slice(0, showItems)"
+  (click)="goToDetails(service.id)"
+  class="service-mini-card"
+>
+  <div class="wrapper">
     <img src="{{ service.image }}" />
-  </ion-card>
-</ion-content>
+  </div>
+</ion-card>
