@@ -11,8 +11,7 @@ import { SpendingComponent } from './spending/spending.component';
 const routes: Routes = [
   {
     path: 'home',
-    loadChildren: () =>
-      import('./home/home.module').then((m) => m.HomePageModule),
+    component: HomepageComponent,
   },
   {
     path: '',

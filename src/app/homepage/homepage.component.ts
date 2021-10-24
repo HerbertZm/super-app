@@ -1,5 +1,6 @@
 import { HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Apollo, gql } from 'apollo-angular';
 
 @Component({
@@ -8,10 +9,14 @@ import { Apollo, gql } from 'apollo-angular';
   styleUrls: ['./homepage.component.scss'],
 })
 export class HomepageComponent implements OnInit {
-  constructor(private apollo: Apollo) {}
+  constructor(private apollo: Apollo, private router: Router) {}
 
   ngOnInit() {
     this.testQuery();
+  }
+
+  goTo(target: string) {
+    this.router.navigate(['/spending']);
   }
 
   testQuery() {

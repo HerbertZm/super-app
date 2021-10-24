@@ -3,7 +3,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Apollo, gql } from 'apollo-angular';
 import { HttpHeaders } from '@angular/common/http';
 import { StreamingServiceService } from '../streaming-service.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-service-details',
@@ -17,7 +17,8 @@ export class ServiceDetailsComponent implements OnInit {
 
   constructor(
     private apolloService: StreamingServiceService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -31,5 +32,41 @@ export class ServiceDetailsComponent implements OnInit {
         this.loaded = true;
       }
     });
+  }
+
+  changeDueDate(date: string, service: string) {
+    this.apolloService.changeDueDate(service, date).subscribe(
+      ({ data }) => {
+        console.log('got data', data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    this.router.navigate(['/spending']);
+  }
+
+  changeSubscriptionPlan(cost: number, plan: string, service: string) {
+    this.apolloService.changeSubscriptionPlan(cost, plan, service).subscribe(
+      ({ data }) => {
+        console.log('got data', data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    this.router.navigate(['/spending']);
+  }
+
+  cancelSubscription(service: string) {
+    this.apolloService.cancelSubscription(service).subscribe(
+      ({ data }) => {
+        console.log('got data', data);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+    this.router.navigate(['/spending']);
   }
 }

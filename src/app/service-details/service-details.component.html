@@ -11,10 +11,12 @@
     <section>
       <h3>Fecha de corte:</h3>
       <h5>{{ serviceDetails['due_date'] }}</h5>
+      <a (click)="changeDueDate('2021-12-12', serviceName)">Cambiar fecha de corte</a>
     </section>
     <section>
       <h3>Suscripcion:</h3>
       <h5>{{ serviceDetails['current_suscription_name'] }}</h5>
+      <a (click)="changeSubscriptionPlan(105.2, 'Premium', serviceName)">Cambiar plan</a>
     </section>
     <section>
       <h3>Costo por periodo:</h3>
@@ -25,7 +27,7 @@
       <h5>{{ serviceDetails['member_since'] }}</h5>
     </section>
     <section style="float: right;">
-      Cancelar suscripcion
+      <a (click)="cancelSubscription(serviceName)">Cancelar suscripcion</a>
     </section>
   </div>
 </ng-container>
