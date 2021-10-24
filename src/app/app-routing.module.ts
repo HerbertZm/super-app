@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AllServicesComponent } from './all-services/all-services.component';
 import { RecentServicesComponent } from './recent-services/recent-services.component';
 import { ServiceFullCardComponent } from './service-full-card/service-full-card.component';
 import { ServiceMiniCardComponent } from './service-mini-card/service-mini-card.component';
@@ -17,7 +18,7 @@ const routes: Routes = [
   },
   {
     path: 'test',
-    component: RecentServicesComponent,
+    component: AllServicesComponent,
   },
 ];
 

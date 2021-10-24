@@ -1,0 +1,32 @@
+@import "src/assets/styles/colors.scss";
+
+app-service-mini-card {
+    display: contents;
+}
+
+.wrapper {
+    background-color: $aqua-white !important;
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 45%;
+    overflow-y: scroll;
+}
+
+.h1 {
+    font-weight: 100;
+}
+
+.recent-wrapper {
+    color: $core-blue-dark;
+    text-align: center;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0px 0px;
+}
