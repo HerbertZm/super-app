@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-service-full-card',
@@ -6,7 +6,72 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service-full-card.component.scss'],
 })
 export class ServiceFullCardComponent implements OnInit {
+  @Input() showItems = 0;
+
   servicesList = [
+    {
+      image: 'assets/app-icons/netflix-long.png',
+      name: 'Netflix',
+      id: 1,
+      paymentDate: '07/11',
+      cost: 150,
+    },
+    {
+      image: 'assets/app-icons/netflix-long.png',
+      name: 'Netflix',
+      id: 2,
+      paymentDate: '07/11',
+      cost: 150,
+    },
+    {
+      image: 'assets/app-icons/netflix-long.png',
+      name: 'Netflix',
+      id: 3,
+      paymentDate: '07/11',
+      cost: 150,
+    },
+    {
+      image: 'assets/app-icons/netflix-long.png',
+      name: 'Netflix',
+      id: 1,
+      paymentDate: '07/11',
+      cost: 150,
+    },
+    {
+      image: 'assets/app-icons/netflix-long.png',
+      name: 'Netflix',
+      id: 2,
+      paymentDate: '07/11',
+      cost: 150,
+    },
+    {
+      image: 'assets/app-icons/netflix-long.png',
+      name: 'Netflix',
+      id: 3,
+      paymentDate: '07/11',
+      cost: 150,
+    },
+    {
+      image: 'assets/app-icons/netflix-long.png',
+      name: 'Netflix',
+      id: 1,
+      paymentDate: '07/11',
+      cost: 150,
+    },
+    {
+      image: 'assets/app-icons/netflix-long.png',
+      name: 'Netflix',
+      id: 2,
+      paymentDate: '07/11',
+      cost: 150,
+    },
+    {
+      image: 'assets/app-icons/netflix-long.png',
+      name: 'Netflix',
+      id: 3,
+      paymentDate: '07/11',
+      cost: 150,
+    },
     {
       image: 'assets/app-icons/netflix-long.png',
       name: 'Netflix',
@@ -32,7 +97,10 @@ export class ServiceFullCardComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.showItems =
+      this.showItems === 0 ? this.servicesList.length : this.showItems;
+  }
 
   goToDetails(id: number): void {
     console.log(id);

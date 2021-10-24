@@ -1,5 +1,14 @@
 @import "src/assets/styles/colors.scss";
 
+ion-card {
+    width: 100%;
+    margin-left: 0 !important;
+}
+
+ion-item {
+    padding-left: 5px;
+}
+
 .image-container {
     width: 250px;
     height: 100%;
@@ -8,7 +17,6 @@
 .service-card-content {
     display: flex;
     flex-direction: column;
-    padding-left: 1em;
     align-items: center;
     justify-content: center;
     width: 100%;

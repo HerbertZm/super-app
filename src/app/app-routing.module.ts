@@ -5,6 +5,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { RecentServicesComponent } from './recent-services/recent-services.component';
 import { ServiceFullCardComponent } from './service-full-card/service-full-card.component';
 import { ServiceMiniCardComponent } from './service-mini-card/service-mini-card.component';
+import { SpendingComponent } from './spending/spending.component';
 
 const routes: Routes = [
   {
@@ -19,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'test',
-    component: HomepageComponent,
+    component: SpendingComponent,
   },
 ];
 
