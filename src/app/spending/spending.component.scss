@@ -1,0 +1,21 @@
+@import "src/assets/styles/colors.scss";
+
+:host {
+    background-color: $navy-blue;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.spending-tile {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $sky-blue-light;
+    width: 85%;
+    color: black;
+    margin-bottom: 15px;
+}
+
