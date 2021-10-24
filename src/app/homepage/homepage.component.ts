@@ -47,7 +47,7 @@ export class HomepageComponent implements OnInit {
         },
       })
       .valueChanges.subscribe((results: any) => {
-        console.log(results);
+        console.log(results.data.get_data);
       });
   }
 }

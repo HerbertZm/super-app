@@ -1,14 +1,54 @@
-<ion-card
-  *ngFor="let service of servicesList.slice(0, showItems)"
-  (click)="goToDetails(service.id)"
->
-  <ion-item class="ion-no-padding">
-    <img
-      src="{{service.image}}"
-      class="image-container">
-    <div class="service-card-content">
-      <ion-label class="service-card-content--item">{{service.paymentDate}}</ion-label>
-      <ion-label class="service-card-content--item">${{service.cost}}</ion-label>
-    </div>
-  </ion-item>
-</ion-card>
+<ng-container *ngIf="loaded">
+  <ion-card
+    (click)="goToDetails('Netflix')"
+  >
+    <ion-item class="ion-no-padding">
+      <img
+        src="assets/app-icons/{{allServices['Netflix']['image_url']}}"
+        class="image-container">
+      <div class="service-card-content">
+        <ion-label class="service-card-content--item">{{allServices['Netflix']['due_date'] | date:'dd MMM' }}</ion-label>
+        <ion-label class="service-card-content--item">${{allServices['Netflix']['current_suscription_price']}}</ion-label>
+      </div>
+    </ion-item>
+  </ion-card>
+  <ion-card
+    (click)="goToDetails('Spotify')"
+  >
+    <ion-item class="ion-no-padding">
+      <img
+        src="assets/app-icons/{{allServices['Spotify']['image_url']}}"
+        class="image-container">
+      <div class="service-card-content">
+        <ion-label class="service-card-content--item">{{allServices['Spotify']['due_date'] | date:'dd MMM' }}</ion-label>
+        <ion-label class="service-card-content--item">${{allServices['Spotify']['current_suscription_price']}}</ion-label>
+      </div>
+    </ion-item>
+  </ion-card>
+  <ion-card
+    (click)="goToDetails('Prime')"
+  >
+    <ion-item class="ion-no-padding">
+      <img
+        src="assets/app-icons/{{allServices['Prime']['image_url']}}"
+        class="image-container">
+      <div class="service-card-content">
+        <ion-label class="service-card-content--item">{{allServices['Prime']['due_date'] | date:'dd MMM' }}</ion-label>
+        <ion-label class="service-card-content--item">${{allServices['Prime']['current_suscription_price']}}</ion-label>
+      </div>
+    </ion-item>
+  </ion-card>
+  <ion-card
+    (click)="goToDetails('Disney')"
+  >
+    <ion-item class="ion-no-padding">
+      <img
+        src="assets/app-icons/{{allServices['Disney']['image_url']}}"
+        class="image-container">
+      <div class="service-card-content">
+        <ion-label class="service-card-content--item">{{allServices['Disney']['due_date'] | date:'dd MMM' }}</ion-label>
+        <ion-label class="service-card-content--item">${{allServices['Disney']['current_suscription_price']}}</ion-label>
+      </div>
+    </ion-item>
+  </ion-card>
+</ng-container>

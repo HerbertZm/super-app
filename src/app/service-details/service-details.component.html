@@ -1,29 +1,31 @@
-<div class="header">
-  <img src="{{ serviceDetails.image }}">
-</div>
-<div class="container">
-  <h1>
-    {{ serviceDetails.name }}
-  </h1>
-</div>
-<div class="details-container">
-  <section>
-    <h3>Fecha de corte:</h3>
-    <h5>{{ serviceDetails.paymentDate }}</h5>
-  </section>
-  <section>
-    <h3>Suscripcion:</h3>
-    <h5>{{ serviceDetails.plan }}</h5>
-  </section>
-  <section>
-    <h3>Costo por periodo:</h3>
-    <h5>{{ serviceDetails.cost }}</h5>
-  </section>
-  <section>
-    <h3>Miembro desde:</h3>
-    <h5>{{ serviceDetails.subDate }}</h5>
-  </section>
-  <section style="float: right;">
-    Cancelar suscripcion
-  </section>
-</div>
+<ng-container *ngIf="loaded">
+  <div class="header">
+    <img src="assets/app-icons/{{ serviceDetails['image_url'] }}">
+  </div>
+  <div class="container">
+    <h1>
+      {{ serviceName }}
+    </h1>
+  </div>
+  <div class="details-container">
+    <section>
+      <h3>Fecha de corte:</h3>
+      <h5>{{ serviceDetails['due_date'] }}</h5>
+    </section>
+    <section>
+      <h3>Suscripcion:</h3>
+      <h5>{{ serviceDetails['current_suscription_name'] }}</h5>
+    </section>
+    <section>
+      <h3>Costo por periodo:</h3>
+      <h5>${{ serviceDetails['current_suscription_price'] }}</h5>
+    </section>
+    <section>
+      <h3>Miembro desde:</h3>
+      <h5>{{ serviceDetails['member_since'] }}</h5>
+    </section>
+    <section style="float: right;">
+      Cancelar suscripcion
+    </section>
+  </div>
+</ng-container>

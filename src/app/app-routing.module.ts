@@ -20,8 +20,12 @@ const routes: Routes = [
     pathMatch: 'full',
   },
   {
-    path: 'test',
-    component: HomepageComponent,
+    path: 'spending',
+    component: SpendingComponent,
+  },
+  {
+    path: 'details/:service',
+    component: ServiceDetailsComponent,
   },
 ];
 

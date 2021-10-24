@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+/* eslint-disable @typescript-eslint/dot-notation */
+import { Component, OnInit, Input } from '@angular/core';
+import { Apollo, gql } from 'apollo-angular';
+import { HttpHeaders } from '@angular/common/http';
+import { StreamingServiceService } from '../streaming-service.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-service-details',
@@ -6,17 +11,25 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./service-details.component.scss'],
 })
 export class ServiceDetailsComponent implements OnInit {
-  serviceDetails = {
-    image: 'assets/app-icons/netflix-long.png',
-    name: 'Netflix',
-    id: 1,
-    paymentDate: '07 de noviembre',
-    cost: 150,
-    plan: 'Basico Test',
-    subDate: 'Feb 2018',
-  };
+  serviceName: string;
+  serviceDetails = [];
+  loaded = false;
 
-  constructor() {}
+  constructor(
+    private apolloService: StreamingServiceService,
+    private route: ActivatedRoute
+  ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.serviceName = this.route.snapshot.paramMap.get('service');
+    this.apolloService.getService(this.serviceName).subscribe((res) => {
+      console.log(this.serviceName);
+      this.serviceDetails = res.data.get_data.services[this.serviceName];
+      console.log(res.data.get_data.services);
+      console.log(this.serviceDetails);
+      if (this.serviceDetails !== []) {
+        this.loaded = true;
+      }
+    });
+  }
 }
