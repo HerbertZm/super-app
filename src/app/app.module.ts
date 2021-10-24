@@ -11,6 +11,7 @@ import { ServiceMiniCardComponent } from './service-mini-card/service-mini-card.
 import { ServiceFullCardComponent } from './service-full-card/service-full-card.component';
 import { RecentServicesComponent } from './recent-services/recent-services.component';
 import { AllServicesComponent } from './all-services/all-services.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AllServicesComponent } from './all-services/all-services.component';
     ServiceFullCardComponent,
     RecentServicesComponent,
     AllServicesComponent,
+    HomepageComponent,
   ],
   entryComponents: [],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule],
